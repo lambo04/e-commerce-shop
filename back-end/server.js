@@ -16,6 +16,10 @@ app.use(cors());
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 
+app.use((req,res) => {
+    res.send('api is running...');
+})
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
